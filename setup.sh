@@ -30,6 +30,7 @@ if test $LOCAL_OS == "Linux" -o $LOCAL_OS == "Raspbian"
 then
     echo "Running $LOCAL_OS"
     apt-get update
+    apt-get install libjpeg-dev zlib1g-dev 
 fi
 
 # If we're on some flavour of Linux we may need to install wheel to allow us to install the packages we'll need
