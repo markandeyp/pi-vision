@@ -60,7 +60,7 @@ if test $? == 0
 then
     echo "Numpy already installed."
 else
-    sudo -u $ORIGINAL_USER -- python3 -m pip install --user -Iv numpy==1.18.4
+    sudo -u $ORIGINAL_USER -- python3 -m pip install --user -Iv numpy
 fi
 
 # Check for PIL and install if needed
@@ -71,15 +71,6 @@ then
     sudo -u $ORIGINAL_USER -- python3 -m pip install --user pillow -U
 else
     sudo -u $ORIGINAL_USER -- python3 -m pip install --user pillow
-fi
-
-# Check for wikipedia and install if needed
-sudo -u $ORIGINAL_USER -- python3 -c "import wikipedia" > /dev/null 2>&1
-if test $? == 0
-then
-    echo "Wikipedia already installed."
-else
-    sudo -u $ORIGINAL_USER -- python3 -m pip install --user wikipedia
 fi
 
 # Check for tensorflow and install if needed
@@ -102,7 +93,7 @@ else
         sudo -u $ORIGINAL_USER  -H python3 -m pip install --user tensorflow-2.2.0-cp37-cp37m-linux_armv7l.whl
         rm tensorflow-2.2.0-cp37-cp37m-linux_armv7l.whl
     else
-        sudo -u $ORIGINAL_USER python3 -m pip install --user -Iv tensorflow==2.2.0
+        sudo -u $ORIGINAL_USER python3 -m pip install --user -Iv tensorflow
     fi
 fi
 
